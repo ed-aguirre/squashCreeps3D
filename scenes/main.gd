@@ -2,9 +2,6 @@ extends Node
 
 @export var mob_scene: PackedScene
 
-
-
-
 func _on_mob_timer_timeout():
 	var mob = mob_scene.instantiate()
 	
@@ -17,6 +14,10 @@ func _on_mob_timer_timeout():
 	
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
+	
+	# We connect the mob to the score label to update the score upon squashing one.
+	mob.squashed.connect($UserInterface/ScoreLabel._on_Mob_squashed.bind())
 
 func _on_player_hit():
 	$MobTimer.stop()
+

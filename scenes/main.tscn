@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0itnbng838s0"]
+[gd_scene load_steps=12 format=3 uid="uid://b0itnbng838s0"]
 
 [ext_resource type="PackedScene" uid="uid://dq5r2sef24ts6" path="res://scenes/player.tscn" id="1_klv72"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_wdypf"]
 [ext_resource type="PackedScene" uid="uid://6vp4k5v7g7mx" path="res://scenes/mob.tscn" id="2_6f1oc"]
 [ext_resource type="FontFile" uid="uid://btrq0doh63iq1" path="res://fonts/Montserrat-Medium.ttf" id="4_w2gp4"]
+[ext_resource type="Script" path="res://scenes/ScoreLabel.gd" id="5_rs7sg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_k5rb0"]
 size = Vector3(60, 2, 60)
@@ -100,6 +101,7 @@ offset_right = 97.0
 offset_bottom = 49.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: 0"
+script = ExtResource("5_rs7sg")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
